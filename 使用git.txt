@@ -1,0 +1,42 @@
+1.确保安装git后：
+git config --global user.name "你的账号"
+
+git config --global user.email "你的邮箱"
+
+2. 获取ssh秘钥和远程GIT关联
+ssh-keygen -t rsa -C "你的邮箱"
+
+#一路回车后
+cd ~/.ssh 
+
+# 打开ssh目录
+gedit id_rsa.pub
+
+# 查看你的公钥 （这里我们把公钥拷贝到github/gitlab的settings的SSH公钥中，完成免密码登录关联）
+ssh -T git@git.oschina.net
+
+# 验证SSH通信情况
+
+3.进入或者新建一个文件夹
+git init # 初始化本地仓库
+
+git config --list # 可以查看你的git配置信息
+
+4.提交你需要GIT的文件
+git add 【单个添加请输入文件名！】
+
+或者 git add . # 全选
+
+5.提交本次请求并更新本地仓库
+git commit -m "注释"
+
+6.建立远程关联请求
+git remote add origin  【这里填写你的项目链接！】
+
+7.PUSH上传
+git push origin master #master 是分支名
+
+更新pull
+git pull origin XXX(分支名，如master)
+
+
